@@ -1,0 +1,35 @@
+.fondo{
+    background-color: blue;
+} 
+
+.color{
+    color: white;
+}
+
+
+#caja{
+    width: 300px;
+    border: 15px solid green;
+    padding: 20px;
+    margin: 20px;
+}
+
+footer{
+    padding: 20px;
+    color: #c5c5c5;
+    background-color: #212529;
+    height: 280px;
+    margin-top: 20px;
+  }
+  
+  footer div p{
+    font-size: 12px;
+    color: #888888;
+    padding-top: 5px;
+    line-height: 10px;
+  }
+  
+  #linkFooter{
+    color: #c5c5c5;
+    text-decoration: none;
+  }
