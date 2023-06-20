@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>VerdiTown</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/logo.png' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/estilos.css' %}" rel="stylesheet">
+    <script src="{% static 'js/app.js' %}" ></script>
+    
+    <script>
+       function mostrarFecha() {
+        var fechaActual = new Date();
+        var fechaFormateada = fechaActual.toLocaleDateString() + ' ' + fechaActual.toLocaleTimeString();
+        document.getElementById('fecha').textContent = fechaFormateada;
+        }
+   </script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <input type="button" value="Mostrar fecha" onclick="mostrarFecha()">
+        <label for="fecha" id="fecha" ></label>
+    </div>
+    
+    
+
+    <label for=""></label>
+    <div class="container">
+        <div id="cajatemp">
+            <h1 id="temperatura-valor"></h1>
+            <h1 id="temperatura-descripcion"></h1>
+        </div>
+    </div><hr><hr>
+    
+
+    <main role="main" class="container">
+        <div class="c-wrapper">
+            <div id="carousel1" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel1" data-slide-to="1"></li>
+                    <li data-target="#carousel1" data-slide-to="2"></li>
+                </ol>
+                <!-- diapositivas -->
+                <div class="carousel-inner" style="border-radius: 7px;">
+                    <div class="carousel-item active" style="text-align:center;">
+                        <img class="img-fluid" src="{% static 'img/carnivora.jpg' %}"
+                        alt="500" height="500px" width="500px">
+
+                    </div>
+                    <div class="carousel-item " style="text-align:center;">
+                        <img class="img-fluid" src="{% static 'img/mostera.jpg' %}" alt="500" height="500px" width="500px">
+
+                    </div>
+                    <div class="carousel-item" style="text-align:center;">
+                        <img class="img-fluid"
+                            src="{% static 'img/palmera.jpg' %}"
+                            alt="500" height="500px" width="500px">
+
+                    </div>
+                </div>
+
+                <!-- botones de desplazamiento a izquierda y derecha -->
+                <a class="carousel-control-prev" href="#carousel1" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel1" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <hr><br>
+
+        <h1>Sobre el mundo de las plantas</h1>
+
+
+
+
+
+        <hr>
+        <div class="row jumbotron" id="plantas">
+            <div class="col-fluid-6">
+                <div>
+                    <h1>VerdiTown</h1><br>
+                    <h2 class="lead"><strong>Curiosidades sobre las plantas</strong></h2>
+                    <p>
+
+
+
+                        La plantas nos proporcionan alimentos, medicinas, madera, combustible y fibras. Además, brindan cobijo a multitud de otros seres
+                        vivos, producen el oxígeno que respiramos, mantienen el suelo, regulan la humedad y contribuyen a la estabilidad del clima.<br><br>
+
+                        Las plantas verdes pueblan toda la Tierra. Son los únicos seres vivos capaces de captar la energía del sol para fabricar materia
+                        orgánica y liberar oxígeno. Por esta razón, son indispensables para la vida de otros organismos.<br><br>
+
+                        Existe una inmensa variedad de plantas, algunas muy simples, otras muy evolucionadas. Forman parte de todos los ecosistemas y se
+                        han adaptado a diversos climas y condiciones del suelo. Algunas pueden vivir en sitios muy secos, otras necesitan agua 
+                        abundante.<br><br>
+                        La mitad de los alimentos que consume la humanidad procede de sólo tres especies de plantas: el trigo, el arroz y el maíz.
+                        Más del 40% de las medicinas derivan de las plantas. Algunas se utilizan directamente, como las hierbas tradicionales. Otras se
+                        originan en el mundo vegetal, pero sufren complicados procesos de transformación.</strong> 
+
+                    </p><br><hr>
+                </div>
+            </div>
+            <div class="col-fluid-6">
+                <img src="{% static 'img/cuerpoplanta.jpg' %}" width=90% height=90% ><hr>
+            </div>
+        </div>
+        <hr><br>
+
+        <hr>
+        <div class="row jumbotron" id="plantas">
+            <div class="col-fluid-6">
+                <div>
+                    <h1>VerdiTown</h1><br>
+                    <h2 class="lead"><strong>Como viven las plantas</strong></h2>
+                    <p>
+                        ¿Cómo respiran las plantas?<br>
+                        A través de la energía que obtienen del sol todas las plantas tienen la capacidad de realizar la fotosíntesis para fabricar sus 
+                        propios “alimentos”. Pero además son capaces de realizar el mecanismo inverso, que también es vital para su desarrollo y 
+                        supervivencia. <br><br>
+
+                        ¿Por qué las plantas son verdes?<br>
+                        Desde la más tierna infancia, cuando nos piden dibujar un árbol o planta echamos mano del crayón verde. Es algo que hemos 
+                        aceptado y normalizado, como que el cielo es azul y las nubes blancas. Pero ¿Alguna vez te has preguntado por qué las plantas
+                         son verdes? ¿Y por qué hay otras con unos colores preciosos como las calatheas triostar? Hoy te explicamos qué mecanismos se 
+                         esconden detrás del color de las plantas.<br><br>
+
+                        ¿Qué plantas producen más oxigeno?<br>
+                        Es perfectamente lógico afirmar que las plantas son fundamentales para nuestra existencia, nuestro destino está ligado a 
+                        estos seres verdes en muchos sentidos, pues nos ofrecen alimentos, medicinas, madera, fibras, además de regular la humedad y 
+                        contribuir a estabilizar el clima; pero quizá una de sus funciones más importantes es que a través de su respiración se 
+                        encargan de absorber el dióxido de carbono y nos devuelven oxígeno, ese compuesto insustituible que necesitamos para vivir.<br><br>
+
+                        ¿Todas las plantas producen semillas?<br>
+                        Todos en algún momento, ya sea motivados por la curiosidad o por alguna asignación escolar, hemos germinado alguna semilla, 
+                        incluso frijoles. Es una cosa increíble ver cómo de algo tan pequeño puede surgir una planta que crecerá y desarrollará para 
+                        convertirse en una adulta capaz de producir frutos, flores y semillas. Pero no todas las plantas siguen este ciclo para 
+                        reproducirse, pues dependiendo de su especie tienen a disposición otros medios. Aunque no lo creas, no todas las plantas 
+                        producen semillas.<br><br>
+
+                        ¿Las plantas sienten dolor?<br>
+                        Las plantas son seres vivos, así que es normal pensar que puedan sentir dolor pero la respuesta a esta inquietud es negativa: 
+                        las plantas no sienten dolor, pues carecen del sistema nervioso y el cerebro para procesar los estímulos de este modo. Podar 
+                        una planta o morder una fruta no es doloroso para ellas, pero esto no quiere decir que las plantas son seres inertes, todo lo 
+                        contrario. Sus medios de comunicación son muy distintos pero están presentes.</strong> <br>
+                    </p><br><hr>
+                </div>
+            </div>
+            <div class="col-fluid-6">
+                <img src="{% static 'img/plantaspartes.jpg' %}" width=90% height=50%>
+            </div>
+        </div>
+       
+
+        
+
+
+
+
+    <!-- script que permite mostrar/ocultar navbar haciendo scroll -->
+    <script type="text/javascript">
+        let ubicacionInicial = window.pageYOffset;
+        window.onscroll = function () {
+            let ubicacionPosterior = window.pageYOffset;
+            if (ubicacionInicial >= ubicacionPosterior) {
+                document.getElementById("barraNav").style.top = "0";
+            }
+            else {
+                document.getElementById("barraNav").style.top = "-70px";
+            }
+            ubicacionInicial = ubicacionPosterior
+        }
+    </script>
+</body>
+
+
+
+
+</html>
+{% endblock %}
