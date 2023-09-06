@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/logo_bookstop.png' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/estilos.css' %}" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</head>
+<body>
+        <nav class="navbar navbar-expand-md navbar-light bg-light mb-4" id="barraNav">
+            <a href="{% url 'index' %}" id="logoBookStop">
+                <img src="{% static 'img/Logo.png' %}" width="100px" height="50px">
+            </a>
+            <!-- botón hamburguesa -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                {% if user.is_staff %}
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'mostrar' %}">Ingresar Item</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'tienda' %}">Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'productos' %}">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'nosotros' %}">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'contacto' %}">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bienvenid@ {{ user.username }} </a>
+                    </li>
+                </ul>
+                {% elif user.is_authenticated%}
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'tienda' %}">Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'nosotros' %}">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'contacto' %}">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bienvenid@ {{ user.username }} </a>
+                    </li>
+                </ul>
+                {% else %} 
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'productos' %}">Ver tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{%url 'nosotros' %}">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{%url 'contacto' %}">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'registrar' %}">Registrarse</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="{%url 'contacto' %}">Contacto</a>
+                    </li>
+                    </ul>                
+                {% endif %}
+                
+                
+          
+                <div>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" id="userBookStop">
+                        <img src="{% static 'img/user-vector-icon.jpg' %}" alt="userBookStop" width="20px">Cerrar sesión
+                    </a>
+                    {% else %}
+                    <a href="{% url 'login' %}" id="userBookStop">
+                        <img src="{% static 'img/user-vector-icon.jpg' %}" alt="userBookStop" width="20px">Iniciar sesión
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    
+
+
+
+    {% block content %}
+
+    {% endblock %}
+
+    <footer>
+        <div class="row col-12">
+            <div class="row col-12">
+                <div class="col-lg-2">
+                    <img src="{% static 'img/logo.png' %}" alt="logoBookStop" width="60px">
+                </div>
+                <div class="col-lg-1">
+                    <a href="index.html" id="linkFooter"><strong>INICIO</strong></a>
+                </div>
+                <div class="col-lg-1">
+                    <a href="galeria.html" id="linkFooter"><strong>Productos</strong></a>
+                </div>
+                <div class="col-lg-1">
+                    <a href="nosotros.html" id="linkFooter"><strong>Quienes somos</strong></a>
+                </div>
+                <div class="col-lg-1">
+                    <a href="contacto.html" id="linkFooter"><strong>Contactenos</strong></a>
+                </div>
+
+            <div class="col-lg-2">
+                <strong>Síguenos</strong>
+                <br><br>
+                <div class="row">
+                    <img src="{% static 'img/2000px-Facebook_font_awesome.svg.png' %}" alt="" width="30px" height="30px"
+                        style=" margin-left: 15px;">
+                    <img src="{% static 'img/twitter.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+                    <img src="{% static 'img/Instagram.png' %}" alt="" width="30px" height="30px" style=" margin-left: 10px;">
+
+                </div>
+            </div>
+
+
+            <div class="col-lg-3">
+
+                <strong>Contacto</strong>
+                <br><br>
+                <div class="row">
+                    <img src="{% static 'img/location.png' %}" alt="" width="20px" height="20px"
+                        style="margin-right: 10px; margin-left: 15px;">
+                    <p>Av. Esq. Blanca 501, Maipú</p>
+                </div>
+                <div class="row">
+                    <img src="{% static 'img/fono.png' %}" alt="" width="20px" height="20px"
+                        style="margin-right: 10px; margin-left: 15px;">
+                    <p>+56957737730</p>
+                </div>
+                <div class="row">
+                    <img src="{% static 'img/email.png' %}" alt="" width="20px" height="20px"
+                        style="margin-right: 10px; margin-left: 15px;">
+                    <p>consulta@verditown.cl</p>
+                </div>
+                <br><br><br>
+
+                <p>&copy; VerdiTown - 2023</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/validacion.js' %}"></script>
+</html>

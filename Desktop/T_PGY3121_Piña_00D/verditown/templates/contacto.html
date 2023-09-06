@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/logo_bookstop.png' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/estilos.css' %}" rel="stylesheet">
+    <script src="{% static 'js/metodos.js' %}"></script>
+    <script src="{% static 'js/validacion.js' %}"></script>
+    <script src="{% static 'js/funciones.js' %}"></script>
+</head>
+<body>
+    
+
+    <div class="container">
+        <form id="mi-formulario" method="post">
+            <div class="form-group">
+                <label for="rut">Rut: </label>
+                <input type="text" id="rut" name="rut" placeholder="Digite su rut.." class="form-control required" minlength="10" onmousemove="colorFondo(this)" onmouseout="colorBlanco(this)">
+                <span id="rut-error" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="nom">Nombre: </label>
+                <input type="text" id="nom" name="nom" placeholder="Digite su nombre.." class="form-control required" minlength="3" onchange="upperText(this)" onmousemove="colorFondo(this)" onmouseout="colorBlanco(this)">
+                <span id="nom-error" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo de Usuario: </label>
+                <input type="text" id="correo" name="correo" placeholder="duoc@duoc.cl" class="form-control required" onmousemove="colorFondo(this)" onmouseout="colorBlanco(this)">
+                <span id="correo-error" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="fono">Teléfono de Usuario: </label>
+                <input type="number" id="fono" name="fono" minlength="9" class="form-control required" onmousemove="colorFondo(this)" onmouseout="colorBlanco(this)">
+                <span id="fono-error" class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="edad">Edad: </label>
+                <input type="number" id="edad" name="edad" placeholder="Digite su edad.." class="form-control required" min="14" max="110" onmousemove="colorFondo(this)" onmouseout="colorBlanco(this)">
+                <span id="edad-error" class="error"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="genero">Género</label>
+                <select id="genero" class="form-control required">
+                    <option value="0">Seleccione género..</option>
+                    <option value="1">Mujer</option>
+                    <option value="2">Hombre</option>
+                    <option value="3">No especificar</option>
+                </select>
+                <span id="genero-error" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="tSoli">Tipo de solicitud</label>
+                <select id="tSoli" class="form-control required">
+                    <option value="0">Seleccione tipo..</option>
+                    <option value="1">Cotizacion</option>
+                    <option value="2">Compra</option>
+                    <option value="3">Distribudiora</option>
+                    <option value="4">Otra</option>
+                </select>
+                <span id="tSoli-error" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <textarea id="carta" class="form-control" rows="7" onmousemove="colorFondo(this)" onmouseout="colorBlanco(this)" readonly></textarea>
+            </div>
+
+            <input type="button" value="Ingresar" onclick="CrearCarta()" class="btn btn-success">
+            <input type="reset" value="Otro Ingreso" class="btn btn-warning"> 
+        </form>
+    </div>
+    <div id="error"></div>
+
+
+</body>
+</html>
+{% endblock %}

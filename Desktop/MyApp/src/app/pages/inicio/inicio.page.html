@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+     <ion-buttons slot="start">
+      <ion-button (click)="MostrarMenu()" color="primary">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+     </ion-buttons>
+    <ion-title color="primary">Te llevo App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+       <ion-card-subtitle style="color:brown; font-weight: bold;">Aplicacion par estudiantes</ion-card-subtitle>
+       <ion-card-title style="color:coral; font-weight: bold;">Te llevo App </ion-card-title>
+     </ion-card-header>
+    <ion-card-content class="texto">
+    
+      "Te llevo app" es la solución perfecta para compartir viajes a clases de manera eficiente y económica. 
+      Con nuestra aplicación, puedes compartir tu vehículo o unirte a otros estudiantes para compartir 
+      gastos y reducir la congestión del tráfico.
+    </ion-card-content>
+    
+     <img src="assets/banner2.jpg" class="ion-padding" style="background-color:cornsilk;">
+ 
+  
+   </ion-card>
+
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Inicio</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <br><br><br>
+
+  <ion-button expand="block" fill="solid" color="success" shape="round" (click)="goToLogin()" >Login</ion-button><br>
+  <ion-button expand="block" fill="solid" color="tertiary" shape="round" (click)="goToRegister()">Registro</ion-button>
+ 
+</ion-content>

@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+     <ion-buttons slot="start">
+      <ion-button (click)="MostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="warning"></ion-icon>
+      </ion-button>
+     </ion-buttons>
+    <ion-title>Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Escoga sede</ion-label>
+      <ion-select value="peperoni" multiple="true" placeholder="Seleccione Sede">
+        <ion-select-option value="Maipu">Maipu</ion-select-option>
+        <ion-select-option value="POeste">Plaza oeste</ion-select-option>
+        <ion-select-option value="SCalor">San Carlos de apoquindo</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-card>
+    <img src="assets/carsharing.avif" class="ion-padding" style="background-color:cornsilk;">
+    <ion-card-header class="encabezado">
+      <ion-card-subtitle style="color: brown; font-weight: bold;">Carsharing en "Te llevo app"</ion-card-subtitle>
+      <ion-card-title style="color: coral; font-weight: bold;">Comparte tu viaje de manera inteligente</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="texto2">
+      <p class="parrafo">
+        Compartir tu viaje nunca ha sido tan fácil y conveniente como con nuestra aplicación Te llevo app. 
+        Con solo unos pocos clics, puedes poner tu vehículo a disposición de otros usuarios que comparten una ruta 
+        similar o un destino cercano. No solo ahorras dinero en combustible y gastos de viaje, sino que también 
+        contribuyes a reducir la congestión del tráfico y disminuir la huella de carbono en nuestra comunidad. 
+      </p>
+    </ion-card-content>
+    <ion-button (click)="Llevar()" expand="block" fill="solid" color="warning" shape="round">
+      Comparte tu viaje
+    </ion-button>
+  </ion-card>
+
+  <ion-card>
+   <ion-card-header class="encabezado">
+      <ion-card-subtitle style="color:brown; font-weight: bold;">Encuentra un estudiante</ion-card-subtitle>
+      <ion-card-title style="color:coral; font-weight: bold;">Buscar viaje </ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="texto3">
+      <p class="parrafo" >
+        ¿Necesitas un automóvil para tu próximo viaje? Con nuestra aplicación de Te llevo app, 
+        encontrar el vehículo perfecto es rápido y sencillo. Navega por una amplia gama de opciones de 
+        automóviles disponibles cerca de ti.
+      </p>
+    </ion-card-content>
+    <img src="assets/buscar.jpg" class="ion-padding" style="background-color:cornsilk;">
+
+    <ion-button (click)="Subir()" expand="block" fill="solid" color="success" shape="round">
+      Busca un viaje
+    </ion-button>
+  </ion-card>
+
+
+
+
+</ion-content>

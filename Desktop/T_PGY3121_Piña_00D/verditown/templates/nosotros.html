@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>VerdiTown</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/logo.png' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/estilos.css' %}" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="fondo">
+    
+    <main role="main" class="container">
+        <div class="c-wrapper">
+            <div id="carousel1" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel1" data-slide-to="1"></li>
+                    <li data-target="#carousel1" data-slide-to="2"></li>
+                </ol>
+                <!-- diapositivas -->
+                <div class="carousel-inner" style="border-radius: 7px;">
+                    <div class="carousel-item active" style="text-align:center;">
+                        <img class="img-fluid" src="{% static 'img/carnivora.jpg' %}"
+                        alt="500" height="500px" width="500px">
+
+                    </div>
+                    <div class="carousel-item " style="text-align:center;">
+                        <img class="img-fluid" src="{% static 'img/mostera.jpg' %}" alt="500" height="500px" width="500px">
+
+                    </div>
+                    <div class="carousel-item" style="text-align:center;">
+                        <img class="img-fluid"
+                            src="{% static 'img/palmera.jpg' %}"
+                            alt="500" height="500px" width="500px">
+
+                    </div>
+                </div>
+
+
+
+                <!-- botones de desplazamiento a izquierda y derecha -->
+                <a class="carousel-control-prev" href="#carousel1" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel1" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+
+
+        <hr>
+        <div class="row jumbotron" id="plantas">
+            <div class="col-lg-6">
+                <div>
+                    <h1>VerdiTown</h1><br>
+                    <h2><strong>Maravillas sobre el mundo de las plantas</strong></h2><br>
+                    <p>
+
+                        Las plantas son los únicos seres vivos autótrofos, capaces de transformar la energía del sol en energía química y 
+                        fabricar con ella materia orgánica. Es decir, producen materia orgánica a partir de fuentes totalmente inorgánicas, 
+                        así es cómo se alimentan las plantas.   <br><br>
+
+                        Estas, a su vez, son alimento para gran variedad de seres vivos, tanto herbívoros como omnívoros. <br><br>
+
+                        Por este motivo, las plantas son las responsables de buena parte de la biomasa presente en el planeta: sin ellas, 
+                        la Tierra sería poco más que un desierto. <br><br>
+
+                        Es más, sin ellas, ni siquiera tendríamos nuestra atmósfera rica en oxígeno.Las plantas produjeron así oxígeno como residuo de 
+                        la fotosíntesis durante un gran período de tiempo, tanto como para llegar a alterar la composición de la atmósfera. Gracias a 
+                        esto, grandes cantidades de oxígeno quedaron expuestas al estímulo de los rayos ultravioleta, que acabaron por formar la capa 
+                        de ozono. Por tanto, simplificando todo el proceso, aportan oxígeno a la atmósfera. Esta capa de ozono impidió que los rayos 
+                        ultravioleta llegaran con tanta fuerza a la superficie terrestre y marítima, permitiendo así que ambas fueran colonizadas por 
+                        las formas de vida.</strong> 
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'img/tazitas.jpg' %}" >
+            </div>
+        </div>
+        <hr><br>
+
+        <hr>
+        <div class="row jumbotron" id="plantas">
+            <div class="col-lg-6">
+                <div>
+                    <h1>VerdiTown</h1><br>
+                    <h2><strong>Nosotros</strong></h2><br>
+                    <p>
+                        Somos una comunidad de vecinos, los cuales compartimos el amor por las plantas. <br>
+                        Nos apasiona la jardinería y el cuidado de las plantas, y queremos compartir esa pasión con nuestros vecinos.<br><br>
+
+                        Nuestro principal Objetivo es ayuda a una organizacion sin fines de lucro, la cual se encarga de expandir y 
+                        cuida las areas verdes en chile.<br><br>
+
+                        <h3>Ademas de esto:</h3>
+                        Nuestra misión es fomentar una comunidad más unida y hermosa a través del amor y cuidado por las plantas, 
+                        y estamos comprometidos en brindarte el mejor contenido para que puedas disfrutar de tu jardín o espacio verde en nuestro 
+                        barrio. ¡Únete a nosotros y juntos hagamos de nuestro vecindario un lugar más verde y acogedor! <br><br>
+
+                        <h3>¿Que se puede econtrar en esta Pagina Web?</h3> <br>
+                        Aquí encontrará información sobre eventos y actividades relacionadas con la jardinería en nuestra comunidad, así como también 
+                        consejos útiles para el cuidado de las plantas en nuestros jardines y espacios verdes. También podrás unirte a grupos de 
+                        interés para conocer a otros vecinos con intereses similares en la jardinería y planificar proyectos de jardinería comunitarios.
+                        <br><br>
+
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'img/menconplanta.jpg' %}" width=90% height=90%>
+            </div>
+        </div>
+        <hr><br>
+
+        <div class="row jumbotron" id="plantas">
+
+            <iframe 
+                width="560" height="315" src="https://www.youtube.com/embed/F7E73osSEuY" title="YouTube video player" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen> 
+            </iframe>
+
+        </div>
+        
+
+
+       
+    </main>
+    <!-- script que permite mostrar/ocultar navbar haciendo scroll -->
+    <script type="text/javascript">
+        let ubicacionInicial = window.pageYOffset;
+        window.onscroll = function () {
+            let ubicacionPosterior = window.pageYOffset;
+            if (ubicacionInicial >= ubicacionPosterior) {
+                document.getElementById("barraNav").style.top = "0";
+            }
+            else {
+                document.getElementById("barraNav").style.top = "-70px";
+            }
+            ubicacionInicial = ubicacionPosterior
+        }
+    </script>
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/validacion.js"></script>
+
+</html>
+{% endblock %}

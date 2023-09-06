@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/logo_bookstop.png' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/estilos.css' %}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h2> Tienda </h2><br>
+        <div class="row">
+            <div class="col-8">
+                <div class="row" style="padding: 5px 0;">
+                    <div class="col-12">
+                        <div class="row">
+                            {% for produ in cositas|slice:":10" %}
+                            <div class="col-6">
+                                <div class="card text-center">
+                                    {% if produ.imagen %}
+                                        <img src="{{ produ.imagen.url }}" class="card-img-top mx-auto">
+                                    {% else %}
+                                        <img src="{% static 'img/sinfoto.webp' %}" class="card-img-top mx-auto">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title" style="font-weight:bold;"> Código : {{ produ.sku }}</h5>
+                                        <p class="card-text">
+                                            Sku : {{ produ.sku }}<br>
+                                            Nombre: {{ produ.nombre }}<br>
+                                            Precio:$ {{ produ.precio }}<br>
+                                        </p>
+                                        <a href="{% url 'agregar' produ.sku %}" class="btn btn-outline-success">Agregar al carro</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                          </div>
+                        </div>
+                        <div class="text-center">
+                            <button id="cargar-mas-btn" class="btn btn-primary">Cargar más</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    {% include "carrito.html" %}
+                </div>
+            </div>
+    </div>
+</body>
+</html>
+{% endblock %}

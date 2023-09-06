@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+     <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" color="warning"></ion-icon>
+      </ion-button>
+     </ion-buttons>
+    <ion-title>alert</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Ej. Alert</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-button (click)="Saludar()" expand="block" fill="solid" color="warning" shape="round">
+    Saludo
+  </ion-button>
+
+  <ion-button (click)="Finalizar()" expand="block" fill="solid" color="success" shape="round">
+    Finalizamos?
+  </ion-button>
+  <p style="color:blue">{{ handlerMessage }}</p>
+  <p style="color:orange">{{ roleMessage }}</p>
+
+  <ion-button (click)="Ingresar()" expand="block" fill="solid" shape="round">
+    Ingrese sus datos
+  </ion-button>
+
+</ion-content>

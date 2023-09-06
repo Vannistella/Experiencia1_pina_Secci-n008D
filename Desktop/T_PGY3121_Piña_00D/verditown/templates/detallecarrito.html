@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h3>Detalle de Compra</h3>
+        <h6>Fecha: {{ fecha }}</h6>
+        <hr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Código Boleta</th>
+                    <th>Código Producto</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prod in productos %}
+                <tr>
+                    <td>{{ prod.id_boleta }}</td>
+                    <td>{{ prod.id_producto }}</td>
+                    <td>{{ prod.cantidad }}</td>
+                    <td>{{ prod.subtotal }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"><h6>Impuesto:</h6></td>
+                    <td><h6>{{ prod.impuesto }}</h6></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><h6>Costo de Envío:</h6></td>
+                    <td><h6>{{ prod.costo_envio }}</h6></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><h6>Total Compra:</h6></td>
+                    <td><h6>{{ prod.total }}</h6></td>
+                </tr>
+            </tfoot>
+        </table>
+        <form action="{% url 'aceptar_boleta' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Aceptar Boleta</button>
+        </form>
+    </div>
+{% endblock %}
