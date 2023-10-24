@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="MostrarMenu()">
+        <ion-icon slot="start" name="menu-outline" color="success"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Menú</ion-title>
+    <ion-buttons slot="end"> 
+      <ion-button (click)="logout()"> 
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card-content>
+    <img src="assets/banner2.jpg" alt="">
+
+
+    <ion-button routerLink="/alert" >
+      ¡¡Bienvenido!! 
+    </ion-button> 
+       
+
+    <ion-list>
+      <ion-item *ngFor="let a of noticias; let i=index" [routerLink]="['/detallenoticia', a.id]">  
+        <ion-label>{{a['nombre']}} &nbsp; {{a['fecha']}} </ion-label>
+        
+      </ion-item>
+    </ion-list>
+
+
+    <ion-button routerLink="/alert" >
+      ¡¡Bienvenido!! 
+    </ion-button> 
+
+
+  </ion-card-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+
+
+
+

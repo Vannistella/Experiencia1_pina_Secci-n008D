@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="MostrarMenu()">
+        <ion-icon slot="start" name="menu-outline" color="success"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>detalleviaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>ID #{{viaje.id}}</ion-card-subtitle>
+      <ion-card-title>Nombre:{{viaje.inicio}} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <span>Hora:{{viaje.hora}} </span>
+      <span>Marca de vehiculo:{{viaje.marcaVehiculo}} </span>
+      <span>Tipo de vehiculo:{{viaje.tipoVehiculo}} </span>
+    </ion-card-content>
+    <ion-button [routerLink]="['/actualizar', viaje.id]"color="warning"> 
+      <ion-icon name="create"></ion-icon> </ion-button>
+    <ion-button [routerLink]="['/eliminar', viaje.id]"color="danger"> 
+      <ion-icon name="trash"></ion-icon> </ion-button>
+  </ion-card>
+</ion-content>

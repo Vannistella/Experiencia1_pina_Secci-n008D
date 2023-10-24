@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>nuevoviaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Lugar de inicio:</ion-label>
+      <ion-input type="text" name="txtInicio" [(ngModel)]="newViaje.inicio" placeholder="Parque bicentenario" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Hora de reunion:</ion-label>
+      <ion-input type="text" name="txtHora" [(ngModel)]="newViaje.hora" placeholder="11:30" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Marca del vehiculo:</ion-label>
+      <ion-input type="text" name="txtmarcaVehiculo" [(ngModel)]="newViaje.marcaVehiculo" placeholder="Hyundai" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Tipo de vehiculo:</ion-label>
+      <ion-input type="text" name="txttipoVehiculo" [(ngModel)]="newViaje.tipoVehiculo" placeholder="Sedan" required></ion-input>
+    </ion-item>
+
+
+
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="CrearViaje()" expand="block" color="success">Crear Mascota</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+
+</ion-content>

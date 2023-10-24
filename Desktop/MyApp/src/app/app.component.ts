@@ -1,45 +1,42 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
-interface Componente{
-  name: string;
+interface Componente {
   icon: string;
+  name: string;
   redirecTo: string;
 }
+
+
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
+
 export class AppComponent {
-  
-  constructor() {}
 
-  componentes : Componente[]=[
+
+  opciones: Componente[] = [
     {
-      name:'Inicio',
       icon: 'home',
-      redirecTo:'/inicio'
+      name: 'Inicio',
+      redirecTo: '/hub'
     },
     {
-      name:'Viaje',
-      icon: 'reader',
-      redirecTo:'/card'
+      icon: 'person',
+      name: 'Perfil',
+      redirecTo: '/perfil'
     },
     {
-      name:'Inicio sesion',
-      icon: 'Enter',
-      redirecTo:'/inputs'
-    },
-    {
-      name:'Registro',
-      icon: 'create',
-      redirecTo:'/formulario'
-    },
-
+      icon: 'navigate-circle',
+      name: 'Viajes',
+      redirecTo: '/viajes'
+    }
+ 
   ]
 
-
-
+  constructor() { }
 
 }

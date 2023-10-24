@@ -1,35 +1,50 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { AutorizadoGuard } from './guards/autorizacion.guard';
 const routes: Routes = [
-   {
+  {
     path: '',
     redirectTo: 'inicio',
     pathMatch: 'full'
   },
   {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then(m => m.RegistroPageModule)
+  },
+  {
     path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./pages/inicio/inicio.module').then(m => m.InicioPageModule)
+
   },
   {
-    path: 'alert',
-    loadChildren: () => import('./pages/alert/alert.module').then( m => m.AlertPageModule)
+    path: 'hub',
+    loadChildren: () => import('./pages/hub/hub.module').then(m => m.HubPageModule),
+    canActivate: [AutorizadoGuard]
   },
   {
-    path: 'action-sheet',
-    loadChildren: () => import('./pages/action-sheet/action-sheet.module').then( m => m.ActionSheetPageModule)
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then(m => m.PerfilPageModule),
+    canActivate: [AutorizadoGuard]
   },
   {
-    path: 'card',
-    loadChildren: () => import('./pages/card/card.module').then( m => m.CardPageModule)
+    path: 'viajes',
+    loadChildren: () => import('./pages/viajes/viajes.module').then( m => m.ViajesPageModule)
   },
   {
-    path: 'inputs',
-    loadChildren: () => import('./pages/inputs/inputs.module').then( m => m.InputsPageModule)
+    path: 'detalleviaje/:id',
+    loadChildren: () => import('./pages/detalleviaje/detalleviaje.module').then( m => m.DetalleviajePageModule)
   },
   {
-    path: 'formulario',
-    loadChildren: () => import('./pages/formulario/formulario.module').then( m => m.FormularioPageModule)
+    path: 'nuevoviaje',
+    loadChildren: () => import('./pages/nuevoviaje/nuevoviaje.module').then( m => m.NuevoviajePageModule)
+  },
+  {
+    path: 'detallenoticia/:id',
+    loadChildren: () => import('./pages/detallenoticia/detallenoticia.module').then( m => m.DetallenoticiaPageModule)
   },
 ];
 
