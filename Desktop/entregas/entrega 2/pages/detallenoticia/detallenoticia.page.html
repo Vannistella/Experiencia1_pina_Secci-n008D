@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>    
+    <ion-buttons slot="start">
+    <ion-button (click)="MostrarMenu()">
+      <ion-icon slot="start" name="menu-outline" color="success"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+    <ion-title>detallenoticia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>ID #{{noticia.id}}</ion-card-subtitle>
+      <ion-card-title>{{noticia.nombre}} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <span>Fecha:{{noticia.fecha}} </span><br>
+      <a [href]="noticia.link" target="_blank">Link: {{noticia.link}}</a>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

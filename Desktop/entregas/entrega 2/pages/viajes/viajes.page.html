@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="MostrarMenu()">
+        <ion-icon slot="start" name="menu-outline" color="success"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/nuevoviaje']">Iniciar
+      </ion-button>
+    </ion-buttons>
+    <ion-title>viajes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-item *ngFor="let a of viajes; let i=index" [routerLink]="['/detalleviaje', a.id]">  <!--url/animalitos/id-->
+      <ion-label>{{a['inicio']}} &nbsp; {{a['hora']}} </ion-label>
+      
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,65 @@
+{
+  "noticias": [
+    {
+      "id": 1,
+      "nombre": "Sede Plaza Norte recibió la quinta edición del SUMMIT de Ciberseguridad",
+      "fecha": "23 OCTUBRE, 2023",
+      "link": "https://www.duoc.cl/?noticia_post_type=sede-plaza-norte-recibio-la-quinta-edicion-del-summit-de-ciberseguridad"
+    },
+    {
+      "id": 2,
+      "nombre": "Novedosa iniciativa de Banco Ripley y sede Plaza Vespucio para fomentar la educación financiera de los alumnos",
+      "fecha": "23 OCTUBRE, 2023",
+      "link": "https://www.duoc.cl/?noticia_post_type=novedosa-iniciativa-de-banco-ripley-y-sede-plaza-vespucio-para-fomentar-la-educacion-financiera-de-los-alumnos"
+    },
+    {
+      "id": 3,
+      "nombre": "En Duoc UC le abrimos las puertas a la tecnología e innovación con los fondos de Desarrollo Experimental",
+      "fecha": "20 OCTUBRE, 2023",
+      "link": "https://www.duoc.cl/?noticia_post_type=en-duoc-uc-le-abrimos-las-puertas-a-la-tecnologia-e-innovacion-con-los-fondos-de-desarrollo-experimental"
+    }
+  ],
+  "usuarios": [
+    {
+      "nombre": "giovanni",
+      "apellido": "piña",
+      "usuario": "giopina",
+      "correo": "gi.pina@duoc.cl",
+      "contrasena": "fuuta123",
+      "id": 1,
+      "isactive": true
+    },
+    {
+      "nombre": "andres",
+      "apellido": "alvarado",
+      "usuario": "andalva",
+      "correo": "an.alva@duoc.cl",
+      "contrasena": "fuuta123",
+      "id": 2,
+      "isactive": true
+    }
+  ],
+  "viajes": [
+    {
+      "id": 1,
+      "inicio": "parque bicentenario",
+      "hora": "08:30",
+      "marcaVehiculo": "Toyota",
+      "tipoVehiculo": "Sedan"
+    },
+    {
+      "id": 2,
+      "inicio": "Villas lo heroes",
+      "hora": "08:30",
+      "marcaVehiculo": "nissan",
+      "tipoVehiculo": "Sedan"
+    },
+    {
+      "inicio": "Mall Plaza oeste",
+      "hora": "13:30",
+      "marcaVehiculo": "Jeep",
+      "tipoVehiculo": "Camioneta",
+      "id": 3
+    }
+  ]
+}
